@@ -67,7 +67,7 @@ Notes:
 
 - Basic file management: `ls` and `ls -l` (in particular, learn what every column in `ls -l` means), `less`, `head`, `tail` and `tail -f` (or even better, `less +F`), `ln` and `ln -s` (learn the differences and advantages of hard versus soft links), `chown`, `chmod`, `du` (for a quick summary of disk usage: `du -hs *`). For filesystem management, `df`, `mount`, `fdisk`, `mkfs`, `lsblk`. Learn what an inode is (`ls -i` or `df -i`).
 
-- Basic network management: `ip` or `ifconfig`, `dig`.
+- Basic network management: `ip` or `ifconfig`, `dig`, `traceroute`, `route`.
 
 - Learn and use a version control management system, such as `git`.
 
@@ -111,7 +111,7 @@ Notes:
 
 - Check what processes are listening via `netstat -lntp` or `ss -plat` (for TCP; add `-u` for UDP).
 
-- See also `lsof` for open sockets and files.
+- See also `lsof` and `fuser` for open sockets and files.
 
 - See `uptime` or `w` to know how long the system has been running.
 
@@ -319,7 +319,7 @@ mkdir empty && rsync -r --delete empty/ some-dir && rmdir some-dir
 
 - For more serious network debugging, [`wireshark`](https://wireshark.org/), [`tshark`](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html), or [`ngrep`](http://ngrep.sourceforge.net/).
 
-- Know about `strace` and `ltrace`. These can be helpful if a program is failing, hanging, or crashing, and you don't know why, or if you want to get a general idea of performance. Note the profiling option (`-c`), and the ability to attach to a running process (`-p`).
+- Know about `strace` and `ltrace`. These can be helpful if a program is failing, hanging, or crashing, and you don't know why, or if you want to get a general idea of performance. Note the profiling option (`-c`), and the ability to attach to a running process (`-p`). Use trace child option (`-f`) to avoid missing important calls.
 
 - Know about `ldd` to check shared libraries etc.
 
@@ -329,7 +329,7 @@ mkdir empty && rsync -r --delete empty/ some-dir && rmdir some-dir
 
 - When debugging why something went wrong in the past, [`sar`](http://sebastien.godard.pagesperso-orange.fr/) can be very helpful. It shows historic statistics on CPU, memory, network, etc.
 
-- For deeper systems and performance analyses, look at `stap` ([SystemTap](https://sourceware.org/systemtap/wiki)), [`perf`](https://en.wikipedia.org/wiki/Perf_(Linux)), and [`sysdig`](https://github.com/draios/sysdig).
+- For deeper systems and performance analyses, look at `stap` ([SystemTap](https://sourceware.org/systemtap/wiki)), [`perf`](https://en.wikipedia.org/wiki/Perf_%28Linux%29), and [`sysdig`](https://github.com/draios/sysdig).
 
 - Check what OS you're on with `uname` or `uname -a` (general Unix/kernel info) or `lsb_release -a` (Linux distro info).
 
